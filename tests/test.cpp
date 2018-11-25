@@ -4,14 +4,15 @@
 
 #include <filesystem.hpp>
 
-TEST(FileSystem, Test1) { 
-	boost::filesystem::path path_to_ftp("C:\\projects\\lab-05-filesystem-Avsyankaa\\misc\\ftp\\bcs");
-        Finansial_files f;
-        f.search_data(path_to_ftp);
-        std::pair<std::string, std::string> result = get_vector_element(f, 0);
-        std::pair<std::string, std::string> expect = {
-            "bcs", "balance_00122223_20180901.txt"};
-        EXPECT_EQ(result, expect);
+TEST(FileSystem, Test1) {
+  boost::filesystem::path path_to_ftp(
+      "C:\\projects\\lab-05-filesystem-Avsyankaa\\misc\\ftp\\bcs");
+  Finansial_files f;
+  f.search_data(path_to_ftp);
+  std::pair<std::string, std::string> result = get_vector_element(f, 0);
+  std::pair<std::string, std::string> expect = {
+      "bcs", "balance_00122223_20180901.txt"};
+  EXPECT_EQ(result, expect);
 }
 
 TEST(FileSystem, Test2) {
@@ -62,8 +63,10 @@ TEST(FileSystem, Test5) {
   f.make_resulting_data();
   std::vector<std::string> result = get_vector(f);
   std::vector<std::string> expect;
-  expect.push_back("broker:otkritie account:03934520 files:48 lastdate:20181018");
-  expect.push_back("broker:otkritie account:03934523 files:47 lastdate:20181017");
+  expect.push_back(
+      "broker:otkritie account:03934520 files:48 lastdate:20181018");
+  expect.push_back(
+      "broker:otkritie account:03934523 files:47 lastdate:20181017");
   EXPECT_EQ(result, expect);
 }
 

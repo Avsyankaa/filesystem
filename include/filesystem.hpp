@@ -5,26 +5,26 @@
 
 #include <boost/filesystem.hpp>
 #include <iostream>
-#include <vector>
 #include <string>
 #include <utility>
+#include <vector>
 
 class Finansial_files {
  public:
-  Finansial_files() {};
+  Finansial_files() {}
   void print_list_of_files();
   void print_resulting_data();
   void search_data(boost::filesystem::path);
   void make_resulting_data();
 
-  friend std::vector<std::string> get_vector(Finansial_files f) { 
-	  return f.resulting_data;
-	  }
-
-  friend std::pair<std::string, std::string> get_vector_element(Finansial_files f, unsigned index) { 
-	  return f.finansial_files[index];
+  friend std::vector<std::string> get_vector(Finansial_files f) {
+    return f.resulting_data;
   }
 
+  friend std::pair<std::string, std::string> get_vector_element(
+      Finansial_files f, unsigned index) {
+    return f.finansial_files[index];
+  }
 
  private:
   std::vector<std::pair<std::string, std::string>> finansial_files;

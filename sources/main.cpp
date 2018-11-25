@@ -2,7 +2,7 @@
 
 #include <filesystem.hpp>
 
-int main(int argc, char *argv[]) { 
+int main(int argc, char *argv[]) {
   if (argc != 1) {
     boost::filesystem::path path_to_ftp(argv[1]);
     std::cout << std::endl;

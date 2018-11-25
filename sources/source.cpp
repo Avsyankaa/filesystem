@@ -2,7 +2,6 @@
 
 #include <filesystem.hpp>
 
-
 void Finansial_files::search_finansial_files(boost::filesystem::path p,
                                              std::string prev) {
   for (const boost::filesystem::directory_entry& x :
@@ -109,12 +108,11 @@ void Finansial_files::make_resulting_data() {
         counter_financial_files = 1;
         counter++;
         continue;
-	  }
-	  std::string result =
-            "broker:" + prev + " " + "account:" + account + " " +
-            "files:" + std::to_string(counter_financial_files) + " " +
-            "lastdate:" + std::to_string(last);
-        resulting_data.push_back(result);
+      }
+      std::string result = "broker:" + prev + " " + "account:" + account + " " +
+                           "files:" + std::to_string(counter_financial_files) +
+                           " " + "lastdate:" + std::to_string(last);
+      resulting_data.push_back(result);
     }
     if (finansial_files[counter].first != prev) {
       std::string result = "broker:" + prev + " " + "account:" + account + " " +
