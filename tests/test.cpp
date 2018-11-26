@@ -11,7 +11,7 @@ TEST(FileSystem, Test1) {
   f.search_data(path_to_ftp);
   std::pair<std::string, std::string> result = get_vector_element(f, 0);
   std::pair<std::string, std::string> expect = {
-      "bcs", "balance_00122223_20180901.txt"};
+      "bcs", "balance_00123456_20181002.txt"};
   EXPECT_EQ(result, expect);
 }
 
@@ -22,7 +22,7 @@ TEST(FileSystem, Test2) {
   f.search_data(path_to_ftp);
   std::pair<std::string, std::string> result = get_vector_element(f, 0);
   std::pair<std::string, std::string> expect = {
-      "bcs", "balance_00122223_20180901.txt"};
+      "ib", "balance_00100002_20180916.txt"};
   EXPECT_EQ(result, expect);
 }
 
@@ -34,9 +34,9 @@ TEST(FileSystem, Test3) {
   f.make_resulting_data();
   std::vector<std::string> result = get_vector(f);
   std::vector<std::string> expect;
-  expect.push_back("broker:bcs account:00122223 files:46 lastdate:20181016");
   expect.push_back("broker:bcs account:00123456 files:44 lastdate:20181014");
   expect.push_back("broker:bcs account:00123458 files:48 lastdate:20181018");
+  expect.push_back("broker:bcs account:00122223 files:46 lastdate:20181016");
   expect.push_back("broker:bcs account:00143456 files:46 lastdate:20181016");
   EXPECT_EQ(result, expect);
 }
@@ -49,8 +49,8 @@ TEST(FileSystem, Test4) {
   f.make_resulting_data();
   std::vector<std::string> result = get_vector(f);
   std::vector<std::string> expect;
-  expect.push_back("broker:ib account:00100001 files:48 lastdate:20181018");
   expect.push_back("broker:ib account:00100002 files:48 lastdate:20181018");
+  expect.push_back("broker:ib account:00100001 files:48 lastdate:20181018");
   expect.push_back("broker:ib account:00100003 files:47 lastdate:20181017");
   EXPECT_EQ(result, expect);
 }
@@ -64,9 +64,9 @@ TEST(FileSystem, Test5) {
   std::vector<std::string> result = get_vector(f);
   std::vector<std::string> expect;
   expect.push_back(
-      "broker:otkritie account:03934520 files:48 lastdate:20181018");
-  expect.push_back(
       "broker:otkritie account:03934523 files:47 lastdate:20181017");
+  expect.push_back(
+      "broker:otkritie account:03934520 files:48 lastdate:20181018");
   EXPECT_EQ(result, expect);
 }
 
@@ -78,17 +78,17 @@ TEST(FileSystem, Test6) {
   f.make_resulting_data();
   std::vector<std::string> result = get_vector(f);
   std::vector<std::string> expect;
-  expect.push_back("broker:bcs account:00122223 files:46 lastdate:20181016");
+  expect.push_back("broker:ib account:00100002 files:48 lastdate:20181018");
+  expect.push_back("broker:ib account:00100001 files:48 lastdate:20181018");
+  expect.push_back("broker:ib account:00100003 files:47 lastdate:20181017");
   expect.push_back("broker:bcs account:00123456 files:44 lastdate:20181014");
   expect.push_back("broker:bcs account:00123458 files:48 lastdate:20181018");
+  expect.push_back("broker:bcs account:00122223 files:46 lastdate:20181016");
   expect.push_back("broker:bcs account:00143456 files:46 lastdate:20181016");
-  expect.push_back("broker:ib account:00100001 files:48 lastdate:20181018");
-  expect.push_back("broker:ib account:00100002 files:48 lastdate:20181018");
-  expect.push_back("broker:ib account:00100003 files:47 lastdate:20181017");
-  expect.push_back(
-      "broker:otkritie account:03934520 files:48 lastdate:20181018");
   expect.push_back(
       "broker:otkritie account:03934523 files:47 lastdate:20181017");
+  expect.push_back(
+      "broker:otkritie account:03934520 files:48 lastdate:20181018");
   EXPECT_EQ(result, expect);
 }
 
@@ -99,7 +99,7 @@ TEST(FileSystem, Test7) {
   f.search_data(path_to_ftp);
   std::pair<std::string, std::string> result = get_vector_element(f, 0);
   std::pair<std::string, std::string> expect = {
-      "ib", "balance_00100001_20180901.txt"};
+      "ib", "balance_00100002_20180916.txt"};
   EXPECT_EQ(result, expect);
 }
 
