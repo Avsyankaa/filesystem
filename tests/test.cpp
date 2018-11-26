@@ -110,6 +110,6 @@ TEST(FileSystem, Test8) {
   f.search_data(path_to_ftp);
   std::pair<std::string, std::string> result = get_vector_element(f, 0);
   std::pair<std::string, std::string> expect = {
-      "otkritie", "balance_03934520_20180901.txt"};
+      "otkritie", "balance_03934523_20180911.txt"};
   EXPECT_EQ(result, expect);
 }
