@@ -14,7 +14,10 @@ jobs:
     script:
     - ls
     - cd misc
+    - cd ftp
     - ls
+    - cd ..
+    - cd ..
     - docker run -v `pwd`:`pwd` -w `pwd` -t rusdevops/bootstrap-cpp scripts/tests.sh
     - ls
   - name: "quality"
