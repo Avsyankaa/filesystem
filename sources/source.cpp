@@ -84,7 +84,7 @@ std::string Finansial_files::give_account(std::string file) {
 }
 
 void Finansial_files::make_resulting_data() {
-  std::string prev = finansial_files[0].first;
+  /*std::string prev = finansial_files[0].first;
   std::string account = give_account(finansial_files[0].second);
   unsigned last = make_unsigned_int(finansial_files[0].second);
   unsigned counter_financial_files = 1;
@@ -129,7 +129,45 @@ void Finansial_files::make_resulting_data() {
   std::string result = "broker:" + prev + " " + "account:" + account + " " +
                        "files:" + std::to_string(counter_financial_files) +
                        " " + "lastdate:" + std::to_string(last);
-  resulting_data.push_back(result);
+  resulting_data.push_back(result);*/
+  std::string broker = finansial_files[0].first;
+  std::string account = give_account(finansial_files[0].second);
+  unsigned last_day = make_unsigned_int(finansial_files[0].second);
+  unsigned counter_financial_files = 1;
+  unsigned counter = 1;
+  while (true) {
+    for (int i = 1; i < finansial_files.size(); i++) {
+      if ((finansial_files[i].first == broker) &&
+          (give_account(finansial_files[i].second) == account)) {
+        counter_financial_files++;
+        if (last_day < make_unsigned_int(finansial_files[i].second))
+          last_day = make_unsigned_int(finansial_files[i].second);
+      }
+    }
+    bool duration = false;
+    while (true) {
+      for (int i = 1; i < finansial_files.size(); i++) {
+        if ((finansial_files[i].first == broker) &&
+            (give_account(finansial_files[i].second) == account)) {
+          finansial_files.erase(finansial_files.begin() + i);
+          duration = true;
+        }
+      }
+      if (duration == false) break;
+      duration = false;
+    }
+    std::string result = "broker:" + broker + " " + "account:" + account + " " +
+                         "files:" + std::to_string(counter_financial_files) +
+                         " " + "lastdate:" + std::to_string(last_day);
+    resulting_data.push_back(result);
+    counter_financial_files = 0;
+    if (finansial_files.size() > 1) {
+      last_day = make_unsigned_int(finansial_files[1].second);
+      account = give_account(finansial_files[1].second);
+      broker = finansial_files[1].first;
+    } else {break;}
+  }
+  finansial_files.erase(finansial_files.begin());
 }
 
 void Finansial_files::print_resulting_data() {
