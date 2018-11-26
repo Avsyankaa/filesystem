@@ -134,9 +134,8 @@ void Finansial_files::make_resulting_data() {
   std::string account = give_account(finansial_files[0].second);
   unsigned last_day = make_unsigned_int(finansial_files[0].second);
   unsigned counter_financial_files = 1;
-  unsigned counter = 1;
   while (true) {
-    for (int i = 1; i < finansial_files.size(); i++) {
+    for (unsigned i = 1; i < finansial_files.size(); i++) {
       if ((finansial_files[i].first == broker) &&
           (give_account(finansial_files[i].second) == account)) {
         counter_financial_files++;
@@ -146,7 +145,7 @@ void Finansial_files::make_resulting_data() {
     }
     bool duration = false;
     while (true) {
-      for (int i = 1; i < finansial_files.size(); i++) {
+      for (unsigned i = 1; i < finansial_files.size(); i++) {
         if ((finansial_files[i].first == broker) &&
             (give_account(finansial_files[i].second) == account)) {
           finansial_files.erase(finansial_files.begin() + i);
