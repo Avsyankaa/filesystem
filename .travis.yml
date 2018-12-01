@@ -12,14 +12,7 @@ jobs:
     - docker run -v `pwd`:`pwd` -w `pwd` --cap-add=SYS_PTRACE -t rusdevops/bootstrap-cpp scripts/checks.sh
   - name: "tests"
     script:
-    - ls
-    - cd misc
-    - cd ftp
-    - ls
-    - cd ..
-    - cd ..
     - docker run -v `pwd`:`pwd` -w `pwd` -t rusdevops/bootstrap-cpp scripts/tests.sh
-    - ls
   - name: "quality"
     script:
     - ./scripts/genenv.sh
