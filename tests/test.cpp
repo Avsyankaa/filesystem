@@ -6,7 +6,7 @@
 
 TEST(FileSystem, Test1) {
   boost::filesystem::path path_to_ftp(
-      "misc/ftp/bcs");
+      "/home/travis/build/Avsyankaa/filesystem/misc/ftp/bcs");
   Finansial_files f;
   f.search_data(path_to_ftp);
   std::pair<std::string, std::string> result = get_vector_element(f, 0);
@@ -17,7 +17,7 @@ TEST(FileSystem, Test1) {
 
 TEST(FileSystem, Test2) {
   boost::filesystem::path path_to_ftp(
-      "misc/ftp");
+      "/home/travis/build/Avsyankaa/filesystem/misc/ftp");
   Finansial_files f;
   f.search_data(path_to_ftp);
   std::pair<std::string, std::string> result = get_vector_element(f, 0);
@@ -28,7 +28,7 @@ TEST(FileSystem, Test2) {
 
 TEST(FileSystem, Test3) {
   boost::filesystem::path path_to_ftp(
-      "misc/ftp/bcs");
+      "/home/travis/build/Avsyankaa/filesystem/misc/ftp/bcs");
   Finansial_files f;
   f.search_data(path_to_ftp);
   f.make_resulting_data();
@@ -43,7 +43,7 @@ TEST(FileSystem, Test3) {
 
 TEST(FileSystem, Test4) {
   boost::filesystem::path path_to_ftp(
-      "misc/ftp/ib");
+      "/home/travis/build/Avsyankaa/filesystem/misc/ftp/ib");
   Finansial_files f;
   f.search_data(path_to_ftp);
   f.make_resulting_data();
@@ -57,7 +57,7 @@ TEST(FileSystem, Test4) {
 
 TEST(FileSystem, Test5) {
   boost::filesystem::path path_to_ftp(
-      "misc/ftp/otkritie");
+      "/home/travis/build/Avsyankaa/filesystem/misc/ftp/otkritie");
   Finansial_files f;
   f.search_data(path_to_ftp);
   f.make_resulting_data();
@@ -72,7 +72,7 @@ TEST(FileSystem, Test5) {
 
 TEST(FileSystem, Test6) {
   boost::filesystem::path path_to_ftp(
-      "misc/ftp");
+      "/home/travis/build/Avsyankaa/filesystem/misc/ftp");
   Finansial_files f;
   f.search_data(path_to_ftp);
   f.make_resulting_data();
@@ -94,7 +94,7 @@ TEST(FileSystem, Test6) {
 
 TEST(FileSystem, Test7) {
   boost::filesystem::path path_to_ftp(
-      "misc/ftp/ib");
+      "/home/travis/build/Avsyankaa/filesystem/misc/ftp/ib");
   Finansial_files f;
   f.search_data(path_to_ftp);
   std::pair<std::string, std::string> result = get_vector_element(f, 0);
@@ -105,7 +105,7 @@ TEST(FileSystem, Test7) {
 
 TEST(FileSystem, Test8) {
   boost::filesystem::path path_to_ftp(
-      "misc/ftp/otkritie");
+      "/home/travis/build/Avsyankaa/filesystem/misc/ftp/otkritie");
   Finansial_files f;
   f.search_data(path_to_ftp);
   std::pair<std::string, std::string> result = get_vector_element(f, 0);
